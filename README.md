@@ -3,9 +3,9 @@ Develop a robot (via URDF) and program it to chase a white ball housed in the wo
 
 # Instructions
 1. Create and initialize a catkin workspace `catkin_ws`
-> $ mkdir -p /***preferred directory***/catkin_ws/src
-> $ cd /***preferred directory***/catkin_ws/src
-> $ catkin_init_workspace
+> $ mkdir -p /***preferred directory***/catkin_ws/src  
+> $ cd /***preferred directory***/catkin_ws/src  
+> $ catkin_init_workspace  
 
 2. Navigate to the `src` directory and clone this repo.
 3. Go back to the `catkin_ws` directory and and launch the world
