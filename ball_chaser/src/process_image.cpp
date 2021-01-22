@@ -27,9 +27,9 @@ void process_image_callback(const sensor_msgs::Image img){
   
   int white_pixel = 255;
   int row; 
-  // Loop through each pixel in the image and check if there is a white pixel
+  // Loop through each pixel in the image and check if there is a white pixel (via checking RGB channels)
   for(int i=0; i < img.height * img.step; i++){
-    if(img.data[i] == white_pixel){
+    if((img.data[i] == white_pixel) && (img.data[i+1] == white_pixel) && (img.data[i+2] == white_pixel)){
       row = i % img.step;
       break;
     }
@@ -48,9 +48,9 @@ void process_image_callback(const sensor_msgs::Image img){
   else if(row > right && row <= img.step){
     drive_robot(0.0,-0.5);
   }
-    // Request a stop when there's no white ball seen by the camera
+  // Request a stop when there's no white ball seen by the camera
   else{
-   drive_robot(0.0,0.0);   
+    drive_robot(0.0,0.0);   
   }
 
 }
